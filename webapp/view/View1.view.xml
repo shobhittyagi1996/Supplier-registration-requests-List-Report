@@ -1,0 +1,455 @@
+<mvc:View
+    controllerName="com.sap.supplierregistrationrequest.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:table="sap.ui.table"
+    xmlns:t="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <uxap:ObjectPageLayout
+                id="ObjectPageLayout"
+                upperCaseAnchorBar="false"
+                showAnchorBar="true"
+                enableLazyLoading="true"
+            >
+                <uxap:sections>
+                    <uxap:ObjectPageSection
+                        id="_IDGenObjectPageSection3"
+                        showTitle="false"
+                    >
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection6"
+                                title=""
+                            >
+                                <uxap:blocks>
+                                    <t:DynamicPage
+                                        id="_IDGenDynamicPage1"
+                                        headerExpanded="{/headerExpanded}"
+                                    >
+                                        <t:header>
+                                            <t:DynamicPageHeader
+                                                id="_IDGenDynamicPageHeader1"
+                                            >
+                                                <t:content>
+                                                    <fb:FilterBar
+                                                        id="filterbar"
+                                                        persistencyKey="myPersKey"
+                                                        useToolbar="false"
+                                                    >
+                                                        <fb:filterGroupItems>
+                                                            <fb:FilterGroupItem
+                                                                id="_IDGenFilterGroupItem1"
+                                                                name="requestno"
+                                                                label="Request Number"
+                                                                groupName="Group1"
+                                                                visibleInFilterBar="true"
+                                                            >
+                                                                <fb:control>
+                                                                    <MultiComboBox
+                                                                        id="_IDGenMultiComboBox1"
+                                                                        name="requestno"
+                                                                        selectionChange=".onSelectionChange"
+                                                                        items="{
+                                                path: '/ProductNames',
+                                                templateShareable: true
+                                            }"
+                                                                    >
+                                                                        <core:Item
+                                                                            id="_IDGenItem1"
+                                                                            key="{key}"
+                                                                            text="{name}"
+                                                                        />
+                                                                    </MultiComboBox>
+                                                                </fb:control>
+                                                            </fb:FilterGroupItem>
+                                                            <fb:FilterGroupItem
+                                                                id="_IDGenFilterGroupItem2"
+                                                                name="suppliername"
+                                                                label="Supplier Name"
+                                                                groupName="Group1"
+                                                                visibleInFilterBar="true"
+                                                            >
+                                                                <fb:control>
+                                                                    <MultiComboBox
+                                                                        id="_IDGenMultiComboBox2"
+                                                                        name="suppliername"
+                                                                        selectionChange=".onSelectionChange"
+                                                                        items="{
+                                                path: '/ProductSuppliers',
+                                                templateShareable: true
+                                            }"
+                                                                    >
+                                                                        <core:Item
+                                                                            id="_IDGenItem2"
+                                                                            key="{key}"
+                                                                            text="{name}"
+                                                                        />
+                                                                    </MultiComboBox>
+                                                                </fb:control>
+                                                            </fb:FilterGroupItem>
+                                                        </fb:filterGroupItems>
+                                                    </fb:FilterBar>
+                                                </t:content>
+                                            </t:DynamicPageHeader>
+                                        </t:header>
+                                    </t:DynamicPage>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection6e"
+                                title=""
+                            >
+                                <uxap:blocks>
+                                    <IconTabBar
+                                        id="idIconTabBarNoIcons"
+                                        expanded="true"
+                                        class="sapUiResponsiveContentPadding"
+                                    >
+                                        <items>
+                                            <IconTabFilter
+                                                id="_IDGenIconTabFilter1"
+                                                text="Draft"
+                                                key="Draft"
+                                            >
+                                                <Table
+                                                    id="itemsTable"
+                                                    inset="false"
+                                                    items="{ddrModel>/}"
+                                                >
+                                                    <columns>
+                                                        <Column id="Column1">
+                                                            <Text
+                                                                id="rqnumber1"
+                                                                text="Request Number"
+                                                            />
+                                                        </Column>
+                                                        <Column id="column14">
+                                                            <Text
+                                                                id="suppliername1"
+                                                                text="Supplier Name "
+                                                            />
+                                                        </Column>
+                                                        <Column id="Column3">
+                                                            <Text
+                                                                id="countryorigin1"
+                                                                text="Country Origin"
+                                                            />
+                                                        </Column>
+
+                                                        <Column id="Column5">
+                                                            <Text
+                                                                id="vat1"
+                                                                text="VAT Number"
+                                                            />
+                                                        </Column>
+
+                                                        <Column id="Column6">
+                                                            <Text
+                                                                id="email1"
+                                                                text="Contact Email"
+                                                            />
+                                                        </Column>
+                                                        <Column id="Column7">
+                                                            <Text
+                                                                id="phone1"
+                                                                text="Phone"
+                                                            />
+                                                        </Column>
+                                                        <Column id="Column8">
+                                                            <Text
+                                                                id="status1"
+                                                                text="Status"
+                                                            />
+                                                        </Column>
+                                                    </columns>
+
+                                                    <items>
+                                                        <ColumnListItem
+                                                            id="itemRow1"
+                                                        >
+                                                            <cells>
+                                                                <Link
+                                                                    id="_IDGenInputf"
+                                                                    text="{ddrModel>requestno}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGenIputf"
+                                                                    text="{ddrModel>suppliername}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGnput4"
+                                                                    text="{ddrModel>countryorigin}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IGenInput5"
+                                                                    text="{ddrModel>vatnumber}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGnInput6"
+                                                                    text="{ddrModel>contactemail}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGeInput6"
+                                                                    text="{ddrModel>phone}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenput6"
+                                                                    text="{ddrModel>status}"
+                                                                />
+                                                            </cells>
+                                                        </ColumnListItem>
+                                                    </items>
+                                                </Table>
+                                            </IconTabFilter>
+
+                                            <IconTabFilter
+                                                id="_IDGenIconTabFilter2"
+                                                text="Request Approval"
+                                                key="Request Approval"
+                                            >
+                                                <Table
+                                                    id="newItemsTable_unique1"
+                                                    items="{raModel>/}"
+                                                    width="100%"
+                                                >
+                                                    <columns>
+                                                        <Column id="iteColumn1">
+                                                            <Text
+                                                                id="rqnumber2"
+                                                                text="Request Number"
+                                                            />
+                                                        </Column>
+                                                        <Column id="itemCumn14">
+                                                            <Text
+                                                                id="suppliername2"
+                                                                text="Supplier Name "
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn9"
+                                                        >
+                                                            <Text
+                                                                id="countryorigin2"
+                                                                text="Country Origin"
+                                                            />
+                                                        </Column>
+
+                                                        <Column
+                                                            id="itemColumn01"
+                                                        >
+                                                            <Text
+                                                                id="vat2"
+                                                                text="VAT Number"
+                                                            />
+                                                        </Column>
+
+                                                        <Column
+                                                            id="itemColumn02"
+                                                        >
+                                                            <Text
+                                                                id="email2"
+                                                                text="Contact Email"
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn03"
+                                                        >
+                                                            <Text
+                                                                id="phone2"
+                                                                text="Phone"
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn04"
+                                                        >
+                                                            <Text
+                                                                id="status2"
+                                                                text="Status"
+                                                            />
+                                                        </Column>
+                                                    </columns>
+
+                                                    <items>
+                                                        <ColumnListItem
+                                                            id="itemRow2"
+                                                        >
+                                                            <cells>
+                                                                <Link
+                                                                    id="_IDGenInput2f"
+                                                                    text="{raModel>requestno}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGenInput3f"
+                                                                    text="{raModel>suppliername}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGenInput4f"
+                                                                    text="{raModel>countryorigin}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput5f"
+                                                                    text="{raModel>vatnumber}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput6f"
+                                                                    text="{raModel>contactemail}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput7f"
+                                                                    text="{raModel>phone}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput6fd"
+                                                                    text="{raModel>status}"
+                                                                />
+                                                            </cells>
+                                                        </ColumnListItem>
+                                                    </items>
+                                                </Table>
+                                            </IconTabFilter>
+
+                                            <IconTabFilter
+                                                id="_IDGenIconTabFilter3"
+                                                text="Approved"
+                                                key="Approved"
+                                            >
+                                                <Table
+                                                    id="newItemsTable"
+                                                    items="{aModel>/}"
+                                                    width="100%"
+                                                >
+                                                    <columns>
+                                                        <Column
+                                                            id="itemColumn13"
+                                                        >
+                                                            <Text
+                                                                id="rqnumber"
+                                                                text="Request Number"
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn14"
+                                                        >
+                                                            <Text
+                                                                id="suppliername"
+                                                                text="Supplier Name "
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn1"
+                                                        >
+                                                            <Text
+                                                                id="countryorigin"
+                                                                text="Country Origin"
+                                                            />
+                                                        </Column>
+
+                                                        <Column
+                                                            id="itemColumn5"
+                                                        >
+                                                            <Text
+                                                                id="vat"
+                                                                text="VAT Number"
+                                                            />
+                                                        </Column>
+
+                                                        <Column
+                                                            id="itemColumn6"
+                                                        >
+                                                            <Text
+                                                                id="email"
+                                                                text="Contact Email"
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn3"
+                                                        >
+                                                            <Text
+                                                                id="phone"
+                                                                text="Phone"
+                                                            />
+                                                        </Column>
+                                                        <Column
+                                                            id="itemColumn4"
+                                                        >
+                                                            <Text
+                                                                id="status"
+                                                                text="Status"
+                                                            />
+                                                        </Column>
+                                                    </columns>
+
+                                                    <items>
+                                                        <ColumnListItem
+                                                            id="itemRow"
+                                                        >
+                                                            <cells>
+                                                                <Link
+                                                                    id="_IDGenInput4gf"
+                                                                    text="{aModel>requestno}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGenInput4jf"
+                                                                    text="{aModel>suppliername}"
+                                                                />
+                                                                <Text
+                                                                    id="_IDGenInput4"
+                                                                    text="{aModel>countryorigin}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput5"
+                                                                    text="{aModel>vatnumber}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput6"
+                                                                    text="{aModel>contactemail}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput06"
+                                                                    text="{aModel>phone}"
+                                                                />
+
+                                                                <Text
+                                                                    id="_IDGenInput01"
+                                                                    text="{aModel>status}"
+                                                                />
+                                                            </cells>
+                                                        </ColumnListItem>
+                                                    </items>
+                                                </Table>
+                                            </IconTabFilter>
+                                        </items>
+                                    </IconTabBar>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
+        </content>
+    </Page>
+</mvc:View>
